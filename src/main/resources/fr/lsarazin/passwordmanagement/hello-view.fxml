@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefWidth="240.0" spacing="20.0" style="-fx-background-color: #A6CDE1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.lsarazin.passwordmanagement.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label id="title" alignment="CENTER" text="Password Management" textAlignment="CENTER" textFill="#363636" wrapText="true">
+      <font>
+         <Font size="25.0" />
+      </font>
+   </Label>
+   <GridPane>
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="20.0" prefWidth="110.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="50.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <CheckBox fx:id="caps" mnemonicParsing="false" text="Majuscules" textFill="#363636">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </CheckBox>
+         <CheckBox fx:id="number" mnemonicParsing="false" text="Chiffres" textFill="#363636" GridPane.rowIndex="1">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </CheckBox>
+         <CheckBox fx:id="special" mnemonicParsing="false" prefHeight="18.0" prefWidth="135.0" text="Caractère spécial" textFill="#363636" GridPane.rowIndex="2">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </CheckBox>
+         <Label text="Nombre de caractères" textFill="#363636" GridPane.rowIndex="3" />
+         <Spinner fx:id="nbChar" editable="true" GridPane.rowIndex="4" />
+      </children>
+   </GridPane>
+    <Button onAction="#onGenerateButtonClick" style="-fx-background-color: #C7FFE4;" text="Générer un mot de passe" textFill="#363636">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+   <TextField fx:id="generateText" editable="false" />
+</VBox>
