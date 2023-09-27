@@ -16,7 +16,7 @@ public class HelloController {
     private CheckBox special;
 
     @FXML
-    private Spinner nbChar;
+    private SpinnerValueFactory.IntegerSpinnerValueFactory nbChar;
 
     @FXML
     private TextField generateText;
@@ -27,9 +27,9 @@ public class HelloController {
         boolean capsValue = caps.isSelected();
         boolean numberValue = number.isSelected();
         boolean specialValue = special.isSelected();
-        //int nbCharValue = nbChar.getPromptText();
+        int nbCharValue = nbChar.getValue();
 
-        String password = generatePassword(capsValue, numberValue ,specialValue, 10);
+        String password = generatePassword(capsValue, numberValue ,specialValue, nbCharValue);
         generateText.setText(password);
     }
 

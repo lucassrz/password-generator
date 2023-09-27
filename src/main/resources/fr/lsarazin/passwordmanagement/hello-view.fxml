@@ -6,7 +6,9 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -45,13 +47,17 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </CheckBox>
-         <CheckBox fx:id="special" mnemonicParsing="false" prefHeight="18.0" prefWidth="135.0" text="Caractère spécial" textFill="#363636" GridPane.rowIndex="2">
+         <CheckBox fx:id="special" mnemonicParsing="false" prefHeight="18.0" prefWidth="135.0" text="Caractères spéciaux" textFill="#363636" GridPane.rowIndex="2">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
          </CheckBox>
          <Label text="Nombre de caractères" textFill="#363636" GridPane.rowIndex="3" />
-         <Spinner fx:id="nbChar" editable="true" GridPane.rowIndex="4" />
+          <Spinner BorderPane.alignment="CENTER" GridPane.rowIndex="4">
+              <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory fx:id="nbChar" max="100" min="0" />
+              </valueFactory>
+          </Spinner>
       </children>
    </GridPane>
     <Button onAction="#onGenerateButtonClick" style="-fx-background-color: #C7FFE4;" text="Générer un mot de passe" textFill="#363636">
