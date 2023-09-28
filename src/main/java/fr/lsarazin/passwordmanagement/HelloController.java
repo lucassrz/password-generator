@@ -38,17 +38,12 @@ public class HelloController {
         String withCaps = withAlphabet.toUpperCase();
         String withNumber = "1234567890";
         String withSpecial = "*$%&#!?";
-        Random rand = new Random();
-        if(caps) {
-            withAlphabet += withCaps;
-        }
-        if(number) {
-            withAlphabet += withNumber;
-        }
-        if(special) {
-            withAlphabet += withSpecial;
-        }
 
+        if(caps) withAlphabet += withCaps;
+        if(number) withAlphabet += withNumber;
+        if(special) withAlphabet += withSpecial;
+
+        Random rand = new Random();
         StringBuilder password = new StringBuilder();
         for(int i = 0; i < nbChar; i++) {
             char letter = withAlphabet.charAt(rand.nextInt(withAlphabet.length()));
